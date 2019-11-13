@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>This is JS!</h1>
+  <p id="demo"></p>
+  <br>
+  <button onmouseover="document.getElementById('demo2').innerHTML = Date()">The time is?</button>
+  <p id="demo2"></p>
+  <p id="demo3"></p>
+
+  <script>
+    var person = {
+      firstName: "John",
+      lastName: "Doe",
+      id: 5566,
+      fullName: function() {
+        return this.firstName + " " + this.lastName;
+      }
+    };
+
+    document.getElementById("demo").innerHTML = person.fullName();
+
+    class Car {
+      constructor(brand) {
+        this.brand = brand;
+      }
+      static hello() {
+        return "Hello, World!";
+      }
+      owner() {
+        return "I own a(n) " + this.brand;
+      }
+    }
+
+    class Model extends Car {
+      constructor(brand, model) {
+        super(brand);
+        this.model = model;
+      }
+      show() {
+        return this.owner() + " " + this.model + ".";
+      }
+    }
+
+    myCar = new Model('Honda', 'CRV')
+    document.getElementById("demo3").innerHTML = Car.hello() + " " + myCar.show();
+
+    alert(document.body.innerHTML);
+  </script>
+</body>
+</html>
